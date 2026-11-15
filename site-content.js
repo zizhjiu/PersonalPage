@@ -2,7 +2,7 @@
 
 // 【GitHub Pages 部署必改】仓库名是 PersonalPage，因此这里必须写成 "/PersonalPage/"。
 // 如果以后改成“用户名.github.io”仓库或使用独立域名，则改成 "/"。
-const base = "/PersonalPage/"
+const base = "/"
 const assetPath = (fileName) => `${base}${fileName}`
 
 const siteContent = {
