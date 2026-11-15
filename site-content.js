@@ -21,7 +21,7 @@ const siteContent = {
   },
 
   about:
-    "I am currently preparing to apply for a Ph.D. program. My research focuses on Multimodal Representation Learning, AI for Science (AI4Science), and Deep Clustering. I received my Master’s degree from Shanxi University, where I was supervised by Prof. Yuhua Qian and Prof. Feijiang Li. I completed my undergraduate studies in Automation at Jiangsu University. I am passionate about sports, especially football. I hope to leverage AI to promote science-based exercise and health management, ultimately improving public health and quality of life.",
+    "I am currently preparing to apply for a Ph.D. program. My research focuses on Multimodal Representation Learning, AI4Science, and Deep Clustering. I received my Master’s degree from Shanxi University, where I was supervised by Prof. Yuhua Qian and Prof. Feijiang Li. I completed my undergraduate studies in Automation at Jiangsu University. I am passionate about sports, especially football. I hope to leverage AI to promote science-based exercise and health management, ultimately improving public health and quality of life.",
 
   announcements: [
     {
@@ -47,7 +47,7 @@ const siteContent = {
       paper:
         "https://openreview.net/forum?id=3DOgmfZ2k6&referrer=%5BAuthor%20Console%5D(%2Fgroup%3Fid%3DICLR.cc%2F2026%2FConference%2FAuthors%23your-submissions)",
       webpage: "https://zizhjiu.github.io/SATC/",
-      code: "https://github.com/zizhjiu/project",
+      code: null,
     },
     {
       title:

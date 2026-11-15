@@ -66,8 +66,6 @@ const splitAuthors = (authors) => {
             :key="idx"
             :title="announcement.text"
             :type="announcement.type"
-            :closable="false"
-            show-icon
             class="announcement"
           />
         </li>
@@ -224,12 +222,19 @@ const splitAuthors = (authors) => {
   color: #42B883;
 }
 .announcement {
-  margin-top: 14px;
+  min-height: 40px;
+  margin-top: 10px;
+  padding: 8px 16px;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 .announcement :deep(.el-alert__title) {
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 1.5;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+}
+.announcement :deep(.el-alert__close-btn) {
+  font-size: 12px;
 }
 .contact-row {
   display: flex;
