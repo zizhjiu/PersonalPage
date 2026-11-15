@@ -60,7 +60,7 @@ const siteContent = {
       code: "https://github.com/2017LI/GSEC.git",
     },
     {
-      title: "FSRC",
+      title: "Clustering-Friendly Image Representations via Fusion of Global Semantic and Local Relational Embeddings",
       authors: "Feijiang Li*, Zizheng Jiu*, Yuhua Qian✉️, Jieting Wang, Liang Du",
       venue: "SIGKDD 2027",
       venueColor: "#0067a5",

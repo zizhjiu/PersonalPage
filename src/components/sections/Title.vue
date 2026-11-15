@@ -23,6 +23,16 @@ const splitAuthors = (authors) => {
 </script>
 
 <template>
+  <div class="announcements-panel">
+    <el-alert
+      v-for="(announcement, idx) in announcements"
+      :key="idx"
+      :title="announcement.text"
+      :type="announcement.type"
+      class="announcement"
+    />
+  </div>
+
   <div class="container">
     <!-- 左侧个人信息 -->
     <div class="left-panel">
@@ -56,18 +66,6 @@ const splitAuthors = (authors) => {
         <li id="about">
           <a href="#about">🔎 About Me</a>
           <p class="menu-desc">{{ about }}</p>
-        </li>
-
-        <!-- News -->
-        <li id="news">
-          <a href="#news">📢 News</a>
-          <el-alert
-            v-for="(announcement, idx) in announcements"
-            :key="idx"
-            :title="announcement.text"
-            :type="announcement.type"
-            class="announcement"
-          />
         </li>
 
         <!-- Research -->
@@ -132,6 +130,18 @@ const splitAuthors = (authors) => {
 
 
 <style scoped>
+/* 页面顶部公告 */
+.announcements-panel {
+  max-width: 2000px;
+  margin: 0 auto;
+  padding: 20px 20px 0;
+  font-family: "Arial", sans-serif;
+}
+
+.announcements-panel .announcement:first-child {
+  margin-top: 0;
+}
+
 /* 整体容器，限制最大宽度为 A4 */
 .container {
   display: flex;
@@ -361,6 +371,9 @@ const splitAuthors = (authors) => {
 
 /* 手机端自动换行 */
 @media (max-width: 900px) {
+  .announcements-panel {
+    padding: 10px 10px 0;
+  }
   .container {
     flex-direction: column;
     max-width: 100%;
