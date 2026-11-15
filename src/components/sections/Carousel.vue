@@ -2,7 +2,7 @@
 import { Swiper, SwiperSlide} from 'swiper/vue';
 import { Navigation, Pagination, Autoplay} from 'swiper/modules';
 import 'swiper/css/bundle';
-import siteContent from '../../../site-content.js';
+import { siteContent } from '../../../site-content.js';
 
 export default {
   components: {

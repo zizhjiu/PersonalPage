@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import siteContent from '../../../site-content.js'
+import { siteContent } from '../../../site-content.js'
 
 const { profile, about, announcements, highlightedAuthor, research: researchList } = siteContent
 

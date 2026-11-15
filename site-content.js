@@ -1,13 +1,18 @@
-// 网站内容统一配置
-// 修改文字、链接或图片时，只需要编辑这个文件。
+
+
+// 【GitHub Pages 部署必改】仓库名是 PersonalPage，因此这里必须写成 "/PersonalPage/"。
+// 如果以后改成“用户名.github.io”仓库或使用独立域名，则改成 "/"。
+const base = "/PersonalPage/"
+const assetPath = (fileName) => `${base}${fileName}`
+
 const siteContent = {
   pageTitle: "Welcome to My Homepage！",
-  favicon: "/logo.png",
+  favicon: assetPath("logo.png"),
   highlightedAuthor: "Zizheng Jiu",
 
   profile: {
     name: "Zizheng Jiu 酒子峥",
-    photo: "/jiu.jpg",
+    photo: assetPath("jiu.jpg"),
     bio: "Shanxi University | M.Sc.",
     location: "Taiyuan, China",
     contact: [
@@ -38,7 +43,7 @@ const siteContent = {
       title: "Spatial Structure and Selective Text Jointly Facilitate Image Clustering",
       authors: "Zizheng Jiu*, Feijiang Li*, Jieting Wang, Yuhua Qian✉️, Lu Chen",
       venue: "ICLR 2026",
-      image: "/SATC.jpg",
+      image: assetPath("SATC.jpg"),
       paper:
         "https://openreview.net/forum?id=3DOgmfZ2k6&referrer=%5BAuthor%20Console%5D(%2Fgroup%3Fid%3DICLR.cc%2F2026%2FConference%2FAuthors%23your-submissions)",
       webpage: "https://zizhjiu.github.io/SATC/",
@@ -50,7 +55,7 @@ const siteContent = {
       authors: "Feijiang Li✉️, Zhenxiong Li, Jieting Wang, Zizheng Jiu, Saixiong Liu, Liang Du",
       venue: "IJCAI 2026",
       venueColor: "#d32f2f",
-      image: "/GSEC.png",
+      image: assetPath("GSEC.png"),
       paper: "https://ijcai.org/proceedings/2026/500",
       code: "https://github.com/2017LI/GSEC.git",
     },
@@ -59,7 +64,7 @@ const siteContent = {
       authors: "Feijiang Li*, Zizheng Jiu*, Yuhua Qian✉️, Jieting Wang, Liang Du",
       venue: "SIGKDD 2027",
       venueColor: "#0067a5",
-      image: "/FSRC.png",
+      image: assetPath("FSRC.png"),
       paper: null,
       webpage: "https://zizhjiu.github.io/FSRCPage/",
       code: "https://github.com/zizhjiu/FSRC",
@@ -67,13 +72,31 @@ const siteContent = {
   ],
 
   carouselImages: [
-    "/1.jpg",
-    "/2.jpg",
-    "/3.JPG",
-    "/4.jpg",
-    "/5.JPG",
-    "/6.jpg",
+    assetPath("1.jpg"),
+    assetPath("2.jpg"),
+    assetPath("3.JPG"),
+    assetPath("4.jpg"),
+    assetPath("5.JPG"),
+    assetPath("6.jpg"),
   ],
 }
 
-export default siteContent
+export { siteContent }
+
+// Vite 会读取这个默认导出；浏览器只会使用上面的 siteContent。
+export default async () => {
+  // 使用变量阻止浏览器构建静态扫描 Node 专用的 Vite 插件。
+  const vuePluginPackage = '@vitejs/plugin-vue'
+  const { default: vue } = await import(/* @vite-ignore */ vuePluginPackage)
+
+  return {
+    base,
+    publicDir: 'icon',
+    plugins: [vue()],
+    resolve: {
+      alias: {
+        '@': `${process.cwd()}/src`,
+      },
+    },
+  }
+}
